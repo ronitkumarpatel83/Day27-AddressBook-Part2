@@ -17,5 +17,17 @@ namespace Day27_AddressBook_Part_2
         public string email { get; set; }
         public int zip { get; set; }
         public long phoneNumber { get; set; }
+
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return $"First Name : {fName}\nLast Name : {lName}\nAddress : {address}\nCity : {city}\nState : {state}\nEmail : {email}\nZip Code : {zip}\nPhone Number : {phoneNumber}";
+        }
     }
+    
 }

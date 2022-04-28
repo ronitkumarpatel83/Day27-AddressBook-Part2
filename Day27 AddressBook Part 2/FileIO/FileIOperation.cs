@@ -27,7 +27,7 @@ namespace Day27_AddressBook_Part_2.FileIO
                 sw.WriteLine("Zip code : " + person.zip);
                 sw.WriteLine();
                 sw.Close();
-                Console.WriteLine("\nData added successfully in file");
+                Console.WriteLine("\nDeatils added successfully");
             }
             else
             {
