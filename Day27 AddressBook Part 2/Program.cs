@@ -16,28 +16,26 @@ namespace Day27_AddressBook_Part_2
         {
             //string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\TextFile1.txt";
             // string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\CSVFile.csv";
-            // string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\FileJson.json";
-            string path = @"C:\Users\Ronit\source\repos\FileJson.json";
+            string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\FileJson.json";
 
-
-            //CreatePerson input = new CreatePerson();
-            ////Getting details from user
-            //Console.WriteLine("\nEnter your First Name : ");
-            //input.fName = Console.ReadLine();
-            //Console.WriteLine("Enter your Last Name : ");
-            //input.lName = Console.ReadLine();
-            //Console.WriteLine("Enter your Address : ");
-            //input.address = Console.ReadLine();
-            //Console.WriteLine("Enter your City Name : ");
-            //input.city = Console.ReadLine();
-            //Console.WriteLine("Enter your State Name : ");
-            //input.state = Console.ReadLine();
-            //Console.WriteLine("Enter your Zip Code : ");
-            //input.zip = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("Enter your Phone Number : ");
-            //input.phoneNumber = Convert.ToInt64(Console.ReadLine());
-            //Console.WriteLine("Enter your Email Address: ");
-            //input.email = Console.ReadLine();
+            CreatePerson input = new CreatePerson();
+            //Getting details from user
+            Console.WriteLine("\nEnter your First Name : ");
+            input.fName = Console.ReadLine();
+            Console.WriteLine("Enter your Last Name : ");
+            input.lName = Console.ReadLine();
+            Console.WriteLine("Enter your Address : ");
+            input.address = Console.ReadLine();
+            Console.WriteLine("Enter your City Name : ");
+            input.city = Console.ReadLine();
+            Console.WriteLine("Enter your State Name : ");
+            input.state = Console.ReadLine();
+            Console.WriteLine("Enter your Zip Code : ");
+            input.zip = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter your Phone Number : ");
+            input.phoneNumber = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("Enter your Email Address: ");
+            input.email = Console.ReadLine();
 
             //FileIOperation.WriteRecordsInFile(path, input); // Writing records into file
             //Console.WriteLine("\n<<<<<<<<<<<< Records >>>>>>>>>>>>>>");
@@ -49,8 +47,8 @@ namespace Day27_AddressBook_Part_2
             //CSVOperations.ReadRecordsInCSVFile(path);
             //Console.ReadLine();
 
-            // Read and Write Operation in JSON Files
-           // JsonFile.WriteRecordsInJSONFile(path, input);
+            //Read and Write Operation in JSON Files
+            JsonFile.WriteRecordsInJSONFile(path, input);
             JsonFile.ReadRecordsInJSONFile(path);
             Console.ReadLine();
         }

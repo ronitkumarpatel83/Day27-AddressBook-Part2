@@ -17,14 +17,9 @@ namespace Day27_AddressBook_Part_2.JsonIOOperation
         /// <param name="input"></param>
         public static void WriteRecordsInJSONFile(string path, CreatePerson input)
         {
-            
-                string jsonData = JsonConvert.SerializeObject(input);
-                
-                
-                    File.WriteAllText(path, jsonData);
-                
-                Console.WriteLine("\nData added in JSON File Successfully");
-            
+                string jsonData = JsonConvert.SerializeObject(input);                
+                File.WriteAllText(path, jsonData);
+                Console.WriteLine("\nData added in JSON File Successfully\n");
         }
         /// <summary>
         /// Reading data from JSON Files
@@ -34,7 +29,9 @@ namespace Day27_AddressBook_Part_2.JsonIOOperation
         {
             if (Program.IsFileExists(path))
             {
-                CreatePerson person = JsonConvert.DeserializeObject<CreatePerson>(path);
+                StreamReader reader = new StreamReader(path);
+                string jsonData = reader.ReadToEnd();
+                CreatePerson person = JsonConvert.DeserializeObject<CreatePerson>(jsonData);
                 Console.WriteLine(person);
             }
         }
