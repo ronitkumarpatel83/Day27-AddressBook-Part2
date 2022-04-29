@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Day27_AddressBook_Part_2.CSVIOOperation;
 using Day27_AddressBook_Part_2.FileIO;
+using Day27_AddressBook_Part_2.JsonIOOperation;
 
 namespace Day27_AddressBook_Part_2
 {
@@ -13,7 +14,11 @@ namespace Day27_AddressBook_Part_2
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\CSVFile.csv";
+            //string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\TextFile1.txt";
+            // string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\CSVFile.csv";
+            // string path = @"C:\Users\Ronit\source\repos\Day27 AddressBook Part 2\Day27 AddressBook Part 2\MyFile\FileJson.json";
+            string path = @"C:\Users\Ronit\source\repos\FileJson.json";
+
 
             //CreatePerson input = new CreatePerson();
             ////Getting details from user
@@ -39,9 +44,14 @@ namespace Day27_AddressBook_Part_2
             //FileIOperation.ReadRecordsFromFile(path); // Reading all records from file 
             //Console.ReadLine();
 
-           // CSVOperations.WriteRecordsInCSVFile(path, input);
-            Console.WriteLine("\n\nRecords present in CSV file are : \n");
-            CSVOperations.ReadRecordsInCSVFile(path);
+            //CSVOperations.WriteRecordsInCSVFile(path, input);
+            //Console.WriteLine("\n\nRecords present in CSV file are : \n");
+            //CSVOperations.ReadRecordsInCSVFile(path);
+            //Console.ReadLine();
+
+            // Read and Write Operation in JSON Files
+           // JsonFile.WriteRecordsInJSONFile(path, input);
+            JsonFile.ReadRecordsInJSONFile(path);
             Console.ReadLine();
         }
         /// <summary>
