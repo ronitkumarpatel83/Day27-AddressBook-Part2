@@ -82,5 +82,39 @@ namespace Day27_AddressBook_Part_2
                 Connection.Close();
             }
         }
+
+        public void AddContact(CreatePerson create)
+        {
+            try
+            {
+                Connection = new SqlConnection(ConnectingString);
+                SqlCommand cmd = new SqlCommand("dbo.spAddContact", Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@First_Name", create.First_Name);
+                cmd.Parameters.AddWithValue("@Last_Name",create.Last_Name);
+                cmd.Parameters.AddWithValue("@Address",create.Address);
+                cmd.Parameters.AddWithValue("@Type",create.Type);
+                cmd.Parameters.AddWithValue("@City",create.City);
+                cmd.Parameters.AddWithValue("@State", create.State);
+                cmd.Parameters.AddWithValue("@Email", create.Email);
+                cmd.Parameters.AddWithValue("@Zip", create.Zip);
+                cmd.Parameters.AddWithValue("@Phone", create.Phone);
+                cmd.Prepare();
+                Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                if (result != 0)
+                    Console.WriteLine("Employee inserted successfully into table");
+                else
+                    Console.WriteLine("Not Insertes");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
     }
 }

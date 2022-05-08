@@ -1,17 +1,15 @@
-﻿create procedure spUpdateContactInformation
+﻿
 
+create procedure spAddContact
 @First_Name varchar(200),
 @Last_Name varchar(200),
-@Phone bigint
-As
-Update addressbook set First_Name = @First_Name where Last_Name = @Last_Name and Phone = @phone;
-
-use address_book_service_DB;
-
- select * from addressbook;
-
- ALTER TABLE addressbook
-ADD Date varchar(255);
-
-SELECT COUNT(City) as Number_of_City from addressbook;
-SELECT COUNT(State) as Number_of_State from addressbook;
+@Address varchar(200),
+@Phone bigint,
+@Type varchar(50),
+@City varchar(50),
+@State varchar(50),
+@Email varchar(50),
+@Zip int
+as
+insert into addressbook(First_Name,Last_Name,Address,Type,City,State,Email,Zip,Phone)
+values(@First_Name,@Last_Name,@Address,@Type,@City,@State,@Email,@Zip,@Phone);
