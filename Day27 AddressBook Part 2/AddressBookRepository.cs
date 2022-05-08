@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -49,6 +50,36 @@ namespace Day27_AddressBook_Part_2
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+        }
+        public void UpdateContactInformation(CreatePerson create)
+        {
+            try
+            {
+                using (Connection = new SqlConnection(ConnectingString))
+                {
+                    CreatePerson create1 = new CreatePerson();
+                    SqlCommand command = new SqlCommand("dbo.spUpdateContactInformation",Connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@First_Name", create.First_Name);
+                    command.Parameters.AddWithValue("@Last_Name", create.Last_Name);
+                    command.Parameters.AddWithValue("@Phone", create.Phone);
+                    Connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    if (result != 0)
+                        Console.WriteLine("Updated successfully");
+                    else
+                    
+                        Console.WriteLine("Unsuccessfull");    
+                }
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
             }
         }
     }

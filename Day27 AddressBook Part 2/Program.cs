@@ -53,9 +53,16 @@ namespace Day27_AddressBook_Part_2
             //Console.ReadLine();
 
             //<<<<<<<<<<<<<<<<<<<<<< SQL DATABASE>>>>>>>>>>>>>>>>>>>>>>>>>>
+            Console.WriteLine("Welcome to Addressbook ADO.NET");
+
             CreatePerson create = new CreatePerson();
+            create.First_Name = "Ritu";
+            create.Last_Name = "Patel";
+            create.Phone = 1236547890;
+
             AddressBookRepository book = new AddressBookRepository();
             book.AddressBookSystem();
+            book.UpdateContactInformation(create);
             Console.ReadLine();
 
 
