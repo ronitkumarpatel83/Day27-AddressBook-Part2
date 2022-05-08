@@ -12,3 +12,6 @@ use address_book_service_DB;
 
  ALTER TABLE addressbook
 ADD Date varchar(255);
+
+SELECT COUNT(City) as Number_of_City from addressbook;
+SELECT COUNT(State) as Number_of_State from addressbook;
