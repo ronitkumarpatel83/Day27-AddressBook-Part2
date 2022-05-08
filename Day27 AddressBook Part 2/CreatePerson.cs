@@ -18,7 +18,17 @@ namespace Day27_AddressBook_Part_2
         public string email { get; set; }
         public int zip { get; set; }
         public long phoneNumber { get; set; }
-
+        // For data base
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public int Serial_Number { get; set; }
+        public string Address { get; set; }
+        public string Type { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Email { get; set; }
+        public int Zip { get; set; }
+        public double Phone { get; set; }
         /// <summary>
         /// Converts to string.
         /// </summary>

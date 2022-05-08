@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressBookRepository.cs" />
     <Compile Include="CreatePerson.cs" />
     <Compile Include="CSVIOOperation\CSVOperations.cs" />
     <Compile Include="FileIO\FileIOperation.cs" />
